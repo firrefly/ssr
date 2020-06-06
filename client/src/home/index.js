@@ -2,7 +2,7 @@
 import React, { memo, useCallback, useState } from 'react';
 
 const HomeComponent = () => {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(5);
 
   const getIncrement = useCallback(
     () => setCount(count + 1),

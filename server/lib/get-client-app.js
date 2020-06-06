@@ -11,8 +11,9 @@ const readTemplate = Consts.ENV.IS_PRODUCTION
   ? fs.readFileSync(Consts.PATH.TEMPLATE_PROD, 'utf-8') : null;
 
 const getTemplate = async() => {
-  const data = Consts.ENV.IS_DEVELOPMENT
-    ? await rp(Consts.PATH.TEMPLATE_DEV) : readTemplate;
+  const data = readTemplate 
+    ? readTemplate
+    : await rp(Consts.PATH.TEMPLATE_DEV);
 
   return data;
 };
