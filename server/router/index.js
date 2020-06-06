@@ -7,10 +7,11 @@ import { getClientApp } from '../lib';
 // Utils
 import { routes } from './routes';
 
-const appResponse = getClientApp();
 const router = new Router();
 
-router.get(routes.home.path, (ctx, next) => {
+router.get(routes.home.path, async(ctx, next) => {
+  const appResponse = await getClientApp();
+
   ctx.set({
     'Content-Type': 'text/html; charset=utf-8',
   });

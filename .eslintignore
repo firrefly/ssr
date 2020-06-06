@@ -7,8 +7,6 @@ public/**
 
 assets/**
 coverage/**
-docs/**
-jsdoc/**
 
 tests/bench/**
 tests/fixtures/**
@@ -22,7 +20,3 @@ main.webpack.config.js
 development.webpack.config.js
 production.webpack.config.js
 postcss.config.js
-
-src/lib/matomo/**
-src/i18n/messages/en/**
-src/i18n/messages/ru/**

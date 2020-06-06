@@ -1,12 +1,21 @@
 // Modules
 import path from 'path';
+import { isString } from 'lodash';
+// Lib
+import { getInitialConsts } from '../lib';
 
-const ROOT = process.cwd();
+const { ROOT, IS_DEVELOPMENT, IS_PRODUCTION } = getInitialConsts();
 
 export const Consts = {
+  ENV: {
+    IS_DEVELOPMENT,
+    IS_PRODUCTION,
+  },
+
   PATH: {
     ROOT,
-    TEMPLATE: path.resolve(ROOT, '../build/index.html'),
+    TEMPLATE_DEV: 'http://localhost:3002/index.html',
+    TEMPLATE_PROD: path.resolve(ROOT, '../build/index.html'),
   },
 
   SERVER: {
