@@ -1,19 +1,18 @@
 // Modules
 import fs from 'fs';
-import  rp from 'request-promise';
+import rp from 'request-promise';
 import React from 'react';
 import ReactDOMServer from 'react-dom/server';
 // Utils
 import { routes } from '../router/routes';
 import { Consts } from '../utils';
 
+const readTemplate = Consts.ENV.IS_PRODUCTION 
+  ? fs.readFileSync(Consts.PATH.TEMPLATE_PROD, 'utf-8') : null;
+
 const getTemplate = async() => {
-  let data;
-  if (Consts.ENV.IS_DEVELOPMENT) {
-    data = await rp(Consts.PATH.TEMPLATE_DEV);
-  } else {
-    data = fs.readFileSync(Consts.PATH.TEMPLATE_PROD, 'utf-8');
-  }
+  const data = Consts.ENV.IS_DEVELOPMENT
+    ? await rp(Consts.PATH.TEMPLATE_DEV) : readTemplate;
 
   return data;
 };
