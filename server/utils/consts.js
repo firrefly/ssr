@@ -14,7 +14,7 @@ export const Consts = {
 
   PATH: {
     ROOT,
-    TEMPLATE_DEV: 'http://localhost:3002/index.html',
+    TEMPLATE_DEV: 'http://localhost:3002/',
     TEMPLATE_PROD: path.resolve(ROOT, '../build/index.html'),
   },
 
