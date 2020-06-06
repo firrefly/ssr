@@ -1,0 +1,91 @@
+{
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "extraFileExtensions": [".js", "jsx"],
+    "sourceType": "module",
+    "allowImportExportEverywhere": false,
+    "codeFrame": false,
+    "ecmaFeatures": {
+      "jsx": true,
+      "experimentalObjectRestSpread": true
+    }
+  },
+  "extends": [
+    "eslint:recommended",
+    "airbnb",
+    "prettier",
+    "prettier/react",
+    "plugin:react/recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:jsx-a11y/recommended",
+    "plugin:promise/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "plugins": [
+    "react",
+    "react-hooks",
+    "jsx-a11y",
+    "promise",
+    "optimize-regex"
+  ],
+  "rules": {
+    "max-len": ["error", {
+      "code": 100,
+      "ignoreComments": true,
+      "ignoreTemplateLiterals": true,
+      "ignoreStrings": true
+    }],
+    "react/static-property-placement": "off",
+    "react/prop-types": "off",
+    "no-console": "off",
+    "no-param-reassign": 0,
+    "no-shadow": "off",
+    "import/prefer-default-export": "off",
+    "import/no-default-export": "error"
+  },
+  "settings": {
+    "import/extensions": [".js", ".jsx"],
+    "import/resolver": {
+      "alias": {
+        "map": [
+          ["@", "./src"],
+          ["@actions", "./src/actions"],
+          ["@app", "./src/App"],
+          ["@api", "./src/api"],
+          ["@components", "./src/components"],
+          ["@constants", "./src/constants"],
+          ["@enhancers", "./src/enhancers"],
+          ["@epics", "./src/epics"],
+          ["@i18n", "./src/i18n"],
+          ["@layouts", "./src/layouts"],
+          ["@lib", "./src/lib"],
+          ["@modules", "./src/modules"],
+          ["@models", "./src/models"],
+          ["@reducers", "./src/reducers"],
+          ["@redux", "./src/redux"],
+          ["@routes", "./src/routes"],
+          ["@selectors", "./src/selectors"],
+          ["@states", "./src/states"],
+          ["@theme", "./src/theme"],
+          ["@utils", "./src/utils"]
+        ],
+        "extensions": [".js", ".jsx", ".json"]
+      }
+    },
+    "react": {
+      "version": "16.12.0"
+    }
+  },
+  "env": {
+    "es6": true,
+    "browser": true,
+    "node": true,
+    "jasmine": true
+  },
+  "globals": {
+    "document": true,
+    "window": true,
+    "parent": true
+  }
+}
